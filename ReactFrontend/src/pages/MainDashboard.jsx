@@ -2,13 +2,11 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { RaceCarIcon, CheckeredFlagIcon, TrophyIcon } from '../components/icons';
 
-
 const BrainIcon = ({ className }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
     <path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.26c-.56.18-1.16.12-1.67-.16-.51-.28-.87-.76-1-1.33l-.26-1.13c-.26.02-.53.03-.79.03-4.53 0-8.22-3.69-8.22-8.22 0-4.53 3.69-8.22 8.22-8.22 4.53 0 8.22 3.69 8.22 8.22 0 .27-.01.54-.04.8l1.13.26c.57.13 1.05.49 1.33 1 .28.51.34 1.11.16 1.67l-.26.79c-.16.48-.53.87-1 1.06-.47.2-1 .17-1.45-.06l-1.49-.77c-.91 1.27-2.4 1.98-3.95 1.89z"/>
   </svg>
 );
-
 
 const MainDashboard = () => {
   const { user } = useAuth();
@@ -30,7 +28,7 @@ const MainDashboard = () => {
       icon: CheckeredFlagIcon,
       link: '/circuits',
       color: 'from-blue-600 to-blue-800',
-      available: true, // ✅ Activé
+      available: true,
     },
     {
       id: 3,
@@ -41,7 +39,6 @@ const MainDashboard = () => {
       color: 'from-orange-600 to-red-600',
       available: true,
     },
-  
     {
       id: 4,
       title: 'Équipes',
@@ -49,12 +46,22 @@ const MainDashboard = () => {
       icon: TrophyIcon,
       link: '/teams',
       color: 'from-purple-600 to-purple-800',
-      available: true, // ✅ Activé
+      available: true,
     },
- 
+    // 🆕 NOUVEAU : Dashboard Incidents IA
+    {
+      id: 5,
+      title: 'Incidents IA',
+      description: 'Prédiction d\'incidents par Intelligence Artificielle',
+      icon: BrainIcon,
+      link: '/incidents',
+      color: 'from-emerald-600 to-teal-800',
+      available: true,
+      badge: 'IA Powered',
+    },
   ];
 
-    return (
+  return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black py-12 px-4 relative overflow-hidden">
       {/* Grille de fond */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:64px_64px]"></div>
@@ -84,8 +91,8 @@ const MainDashboard = () => {
           </p>
         </div>
 
-        {/* Dashboard Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        {/* Dashboard Cards - Modifié pour 5 cartes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-12">
           {dashboardCards.map((card) => (
             <div key={card.id} className="relative group">
               {card.available ? (
@@ -113,9 +120,9 @@ const MainDashboard = () => {
                         {card.description}
                       </p>
 
-                      {/* Badge Disponible ou Badge Spécial */}
+                      {/* Badge Spécial pour IA ou Badge Disponible */}
                       {card.badge ? (
-                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                           </svg>

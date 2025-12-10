@@ -1,0 +1,25 @@
+{
+  "model_version": "1.0",
+  "model_type": "CNN+LSTM Hybrid",
+  "seq_length": 10,
+  "classes": [
+    "collision",
+    "panne_moteur",
+    "probleme_pneus",
+    "safety_car"
+  ],
+  "feature_names": [
+    "Position Grille",
+    "Circuit",
+    "Pilote",
+    "\u00c9curie",
+    "Ann\u00e9e",
+    "Tours Compl\u00e9t\u00e9s",
+    "Nombre Pit Stops",
+    "Changement Position"
+  ],
+  "test_accuracy": 0.8674803972244263,
+  "trained_date": "2025-12-01 22:34:54",
+  "num_features_static": 8,
+  "num_classes": 4
+}

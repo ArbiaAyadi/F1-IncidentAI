@@ -16,7 +16,7 @@ import RacesDashboard from './pages/RacesDashboard';
 import ChampionshipDashboard from './pages/ChampionshipDashboard';
 import StrategyDashboard from './pages/StrategyDashboard';
 import TeamsDashboard from './pages/TeamsDashboard';
-import IncidentPredictorPage from './pages/IncidentDashboard';  
+import IncidentDashboard from './pages/IncidentDashboard';  
 
 function App() {
   return (
