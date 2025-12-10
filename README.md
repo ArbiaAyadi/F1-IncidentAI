@@ -1,6 +1,6 @@
 F1-IncidentAI
-
 📋 Vue d'ensemble
+
 Système de prédiction d'incidents en Formule 1 utilisant le Deep Learning pour anticiper les risques pendant les courses et assister les équipes dans leurs décisions stratégiques combinant :
 
 Backend Django pour la gestion des entités F1 (pilotes, circuits, courses, voitures, etc.)
